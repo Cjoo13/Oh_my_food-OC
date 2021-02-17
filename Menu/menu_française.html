@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-       <meta charset="utf-8" />
-       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <script src="https://kit.fontawesome.com/b4d0919e04.js" crossorigin="anonymous"></script>
-       <title>Ohmyfood - Menu À la française</title>
-       <meta name="description" content="Composez votre menu dans le restaurant À la française" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../dart-sass/sass/style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/b4d0919e04.js" crossorigin="anonymous"></script>
+       	<title>Ohmyfood - Menu À la française</title>
+       	<meta name="description" content="Composez votre menu dans le restaurant À la française" />
     </head>
 
     <body>
     	<div id="bloc-page">
     		<header>
     			<div class="fleche-logo">
-    				<i class="fas fa-arrow-left"></i>
-    				<img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
+					<a href="../index.html">
+    					<i class="fas fa-arrow-left"></i>
+					</a>
+    				<img src="../images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
     			</div>
     			<figure class="background">
-    				<img src="images/restaurants/a_la_francaise.jpg" alt="Photo du restaurant À la française" />
+    				<img src="../images/restaurants/a_la_francaise.jpg" alt="Photo du restaurant À la française" />
     			</figure>
     		</header>
 
     		<section class="menu">
-    			<h1 class="menu__heading">À la française</h1>
-    			<div class="heart">
-    				<i class="fas fa-heart"></i>
-                	<i class="fas fa-heart"></i>
+				<div class="menu__title">
+    				<h1 class="menu__heading">À la française</h1>
+    				<div class="heart">
+    					<i class="far fa-heart"></i>
+                		<i class="fas fa-heart"></i>
+					</div>
                 </div>
 
                 <div class="choix-plat">
@@ -107,19 +114,19 @@
                 </button>
            	</section>
 
-           	<footer>
-                <img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
-                <nav class="nav">
-                    <ul>
-                        <li class="nav__link nav__link--bold"><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-                        <li class="nav__link nav__link--bold"><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
-                        <li class="nav__link"><a href="#">Mentions légales</a></li>
-                        <li class="nav__link"><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </footer>
-        </div>
-    </body>
+			<footer class="footer">
+				<p class="footer__title">Ohmyfood</p>
+				<nav class="footer__nav">
+					<ul>
+						<li class="footer__link footer__link--bold"><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+						<li class="footer__link footer__link--bold"><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+						<li class="footer__link"><a href="#">Mentions légales</a></li>
+						<li class="footer__link"><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+	</body>
 </html>
 
 
