@@ -8,6 +8,11 @@
     flex-direction: column;
 }
 
+@mixin flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @mixin flex-between {
     display: flex;
     justify-content: space-between;
@@ -15,4 +20,19 @@
 
 @mixin shadow {
     box-shadow: 0px 5px 10px lightgrey;
+}
+
+@mixin margin-figure-index {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@mixin hover {
+    transform: scale(1.02);
+}
+
+@mixin ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

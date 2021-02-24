@@ -14,7 +14,7 @@ body
 	font-family: 'Roboto', sans-serif;
 }
 
-body, nav, ul, p, h2, h3, h1
+body, nav, ul, p, h2, h3, h1, figure
 {
 	margin: 0;
 	padding: 0;
@@ -40,8 +40,34 @@ ul
 #bloc-page
 {
 	width: 100%;
-	max-width: 320px;
 	margin: auto;
+    max-width: 1400px;
+}
+
+.heart {
+    margin-right: 20px;
+    position: relative;
+    font-size: 1.4rem;
+    &::before {
+        content: "";
+        font-weight: bold;
+        transition: color 1s ease-out;
+        }
+
+    .fas {
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        height: 100%;
+        width: 100%;
+        color: $white-color;
+        font-size: 1.2rem;
+        &:hover {
+            color: $primary-color;
+            transition: .5s;
+            cursor: pointer;
+        }        
+    }
 }
 
 /* PAGE D'ACCUEIL */
@@ -49,10 +75,12 @@ ul
 .logo
 {
 	@include flex-center;
+    @include margin-figure-index;
 
     img
     {
         width: 150px;
+        height: 25px;
     }
 }
 
@@ -87,13 +115,16 @@ ul
     @include shadow;
     padding: 15px;
     border-radius: 30px;
-    background: darken($secondary-color, 10);
+    background: linear-gradient($secondary-color, $primary-color);
     cursor: pointer;
     border-width: 0;
     &__texte {
         color: $white-color;
         padding-left: 10px;
         padding-right: 10px;
+    }
+    &:hover {
+        @include hover;
     }
 }
 
@@ -106,19 +137,25 @@ ul
 
 .fonctionnement
 {
-    @include flex-column;
-    align-items: center;
+    @include flex-wrap;
+    justify-content: center;
     margin-bottom: 30px;
     &__cartouche {
         display: flex;
-        margin-bottom: 40px;
+        margin: 15px;
         border-radius: 24px;
         background: $background-color;
         @include shadow;
         padding: 30px;
-        padding-left: 30px;
-        width: 233px;
+        max-width: 290px;
+        min-width: 230px;
         cursor: pointer;
+        &:hover {
+            @include hover;
+        }
+        &--blue {
+            background: lighten(#8b8bfa, 20);
+        }
     }
     &__texte {
         display: flex;
@@ -137,10 +174,16 @@ ul
     p {
         margin-left: 20px;
         font-weight: 600;
+        font-size: 0.9rem;
     }
 
     i {
         opacity: 0.5;
+    }
+
+    .fa-store {
+        color: $primary-color;
+        opacity: 1;
     }
 }
 
@@ -162,6 +205,14 @@ ul
             border-radius: 10px;
             @include shadow;
             position: relative;
+            @include margin-figure-index;
+            &:hover {
+                @include hover;
+            }
+            @media (min-width: 600px) {
+                margin-right: 10px;
+                margin-left: 10px;
+            }
         }
         &__nouveau {
             background: $tertiary-color;
@@ -186,9 +237,6 @@ ul
         }
         &__heading {
             padding-top: 10px;
-        }
-        .heart {
-            margin-right: 20px;
         }
     }
 
@@ -225,23 +273,40 @@ ul
         color: darken($white-color, 10)
     }
 
+    i {
+        padding-right: 10px;
+    }
+
+    .fa-hands-helping {
+        font-size: 0.7rem;
+    }
+
+    @media (min-width: 600px) {
+        align-items: center;
+    }
+
+
+
 }
 
 /* PARTIE MENU */
 
 .fleche-logo
 {
-	display: flex;
+	@include flex-center;
 
     img
     {
+        @include margin-figure-index;
         width: 150px;
-        margin-top: 10px;
+        
     }
 
     a {
-        flex-grow: 0.5;
-        margin-top: 15px;
+        margin-top: 12px;
+        padding-left: 15px;
+        position: absolute;
+        left: 10px;
     }
 }
 
@@ -251,8 +316,9 @@ ul
 
     img 
     {
-        width: 320px;
-        height: 270px;
+        width: 100%;
+        max-height: 400px;
+        min-height: 270px;
         object-fit: cover;
     }
 }
@@ -268,6 +334,9 @@ ul
         border-radius: 30px 30px 0px 0px;
         margin-top: -50px;
         background: $background-color;
+        .fas {
+            top: 11px;        
+        }
     }
 
     h1
@@ -304,18 +373,8 @@ ul
 
     .cartouche-menu
     {
-        &__subtext {
-            @include flex-between;
-        }
-        &__prix {
-            font-weight: 600;
-        }
-
-        p
-        {
-            font-size: 0.8rem;
-        }
-        
+        display: flex;
+        align-items: flex-end;
         background: $white-color;
         margin-left: 15px;
         margin-right: 15px;
@@ -325,6 +384,25 @@ ul
         border-radius: 10px;
         @include shadow;
         border: 1px solid $white-color;
-        cursor: pointer
+        cursor: pointer;
+        height: 40px;
+        &__texte {
+            @include ellipsis;
+            flex: 1;
+        }
+        &__heading {
+            @include ellipsis;
+        }
+        &__prix {
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        &__subtext {
+            font-size: 0.8rem;
+            @include ellipsis;
+        }
+        &:hover {
+            @include hover;
+        }
     }
 }
