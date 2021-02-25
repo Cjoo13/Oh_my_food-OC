@@ -1,6 +1,7 @@
 /* REGLES GENERALES */
 
 @import "libs/mixin.scss";
+@import "libs/keyframes.scss";
 
 $background-color: #f9f9f9;
 $primary-color: #9356DC;
@@ -8,6 +9,7 @@ $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $black-color: rgb(0, 0, 0);
 $white-color: #fff;
+$button-color: linear-gradient($primary-color, $secondary-color);
 
 body
 {
@@ -115,7 +117,7 @@ ul
     @include shadow;
     padding: 15px;
     border-radius: 30px;
-    background: linear-gradient($secondary-color, $primary-color);
+    background: $button-color;
     cursor: pointer;
     border-width: 0;
     &__texte {
@@ -125,6 +127,8 @@ ul
     }
     &:hover {
         @include hover;
+        opacity: 0.9;
+        box-shadow: 3px 3px 12px rgba(0,0,0,.5);
     }
 }
 
@@ -152,9 +156,14 @@ ul
         cursor: pointer;
         &:hover {
             @include hover;
+            background: lighten(rgba(117, 45, 255, 0.15), 15);
+            .fas {
+                color: $primary-color;
+                opacity: 1;
+            }
         }
         &--blue {
-            background: lighten(#8b8bfa, 20);
+            background: lighten(rgba(117, 45, 255, 0.15), 15);
         }
     }
     &__texte {
@@ -327,6 +336,15 @@ ul
 {
     @include flex-column;
     background: $background-color;
+    &__container {
+        @include flex-column;
+        align-items: center;
+        @media (min-width: 980px) {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+    }
     &__title {
         @include flex-between;
         padding-top: 20px;
@@ -336,6 +354,12 @@ ul
         background: $background-color;
         .fas {
             top: 11px;        
+        }
+        @media (min-width: 600px) {
+            justify-content: center;
+            h1 {
+                padding-right: 40px;
+            }
         }
     }
 
@@ -360,15 +384,28 @@ ul
 
 .choix-plat
 {
+    @media (min-width: 980px) {
+        margin-right: 20px;
+        &--bis {
+            margin-right: 0;
+        }
+    }
+    @media (min-width: 1080px) {
+        margin-right: 40px;
+        &--bis {
+            margin-right: 0;
+        }
+    }
     &__heading {
         border-bottom: 3px solid $tertiary-color;
         padding-bottom: 3px;
         font-weight: lighter;
         width: 40px;
-        margin-left: 15px;
         background: $background-color;
         margin-bottom: 30px;
         margin-top: 40px;
+        font-size: 1.1rem;
+        opacity: 0.75;
     }
 
     .cartouche-menu
@@ -376,8 +413,9 @@ ul
         display: flex;
         align-items: flex-end;
         background: $white-color;
-        margin-left: 15px;
-        margin-right: 15px;
+        width: 275px;
+        margin-left: 0px;
+        margin-right: 0px;
         padding: 10px;
         padding-left: 5px;
         margin-bottom: 18px;
@@ -386,6 +424,29 @@ ul
         border: 1px solid $white-color;
         cursor: pointer;
         height: 40px;
+        overflow: hidden;
+        &--first {
+            animation: apparition 1.2s;
+        }
+        &--second {
+            animation: apparition 1.4s;
+        }
+        &--third {
+            animation: apparition 1.6s;
+        }
+        &--fourth {
+            animation: apparition 1.7s;
+        }
+        &:hover {
+            @include hover;
+            .cartouche-menu__check {
+                margin-right: -11px;
+            }
+            i {
+                transform: rotate(360deg);
+                transition-duration: .5s;
+            }
+        }
         &__texte {
             @include ellipsis;
             flex: 1;
@@ -395,14 +456,29 @@ ul
         }
         &__prix {
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
         &__subtext {
             font-size: 0.8rem;
             @include ellipsis;
         }
-        &:hover {
-            @include hover;
+        &__check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            background: #99e2d0;
+            width: 60px;
+            height: 62px;
+            margin-left: 50px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-right: -100px;
+            transition-duration: .5s;
+        }
+        .fas {
+            color: $white-color;
+            font-size: 1.5rem;
         }
     }
 }
