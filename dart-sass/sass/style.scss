@@ -43,7 +43,51 @@ ul
 {
 	width: 100%;
 	margin: auto;
-    max-width: 1400px;
+    position: relative;
+}
+
+.loading
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: $background-color;
+    animation: load .01s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10001;
+        overflow: hidden;
+        background: #0b0b0b;
+        opacity: 0.6;
+    }
+    &::after {
+        box-sizing: border-box;
+        z-index: 10002;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -25px 0 0 -25px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid $primary-color;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spinner 1s linear infinite;
+    }
+    
 }
 
 .heart {
@@ -77,7 +121,8 @@ ul
 .logo
 {
 	@include flex-center;
-    @include margin-figure-index;
+    padding-top: 10px;
+    margin-bottom: 10px;
 
     img
     {
@@ -137,6 +182,9 @@ ul
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 15px;
+    @media(min-width: 600px) {
+        margin-left: 30px;
+    }
 }
 
 .fonctionnement
@@ -203,6 +251,10 @@ ul
         padding-bottom: 10px;
         padding-top: 50px;
         margin-left: 15px;
+        @media(min-width: 600px) {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
     }
 
     .choix-restau {
@@ -221,6 +273,7 @@ ul
             @media (min-width: 600px) {
                 margin-right: 10px;
                 margin-left: 10px;
+                width: 600px;
             }
         }
         &__nouveau {
@@ -256,6 +309,9 @@ ul
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         object-fit: cover;
+        @media(min-width: 600px) {
+            width: 600px;
+        }
     }
 }
 
@@ -316,6 +372,9 @@ ul
         padding-left: 15px;
         position: absolute;
         left: 10px;
+        @media(min-width: 980px) {
+            left: 45px;
+        }
     }
 }
 
@@ -342,6 +401,7 @@ ul
         @media (min-width: 980px) {
             flex-direction: row;
             justify-content: center;
+            align-items: flex-start;
         }
 
     }
