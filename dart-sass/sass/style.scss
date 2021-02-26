@@ -70,7 +70,7 @@ ul
         z-index: 10001;
         overflow: hidden;
         background: #0b0b0b;
-        opacity: 0.6;
+        opacity: 1;
     }
     &::after {
         box-sizing: border-box;
@@ -82,6 +82,7 @@ ul
         margin: -25px 0 0 -25px;
         border: 3px solid #f3f3f3;
         border-top: 3px solid $primary-color;
+        border-bottom: 3px solid $secondary-color;
         border-radius: 50%;
         width: 50px;
         height: 50px;
