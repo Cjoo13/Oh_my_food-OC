@@ -55,13 +55,13 @@ ul
     top: 0;
     background-color: $background-color;
     animation: load .01s;
-    animation-delay: 3s;
+    animation-delay: 2s;
     animation-fill-mode: both;
     z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.5;
+    opacity: 0.8;
     &::before {
         content: "";
         position: absolute;
@@ -69,8 +69,8 @@ ul
         height: 100%;
         z-index: 10001;
         overflow: hidden;
-        background: #0b0b0b;
-        opacity: 1;
+        background: $background-color;
+        opacity: 0.8;
     }
     &::after {
         box-sizing: border-box;

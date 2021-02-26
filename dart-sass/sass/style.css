@@ -124,8 +124,8 @@ ul {
   background-color: #f9f9f9;
   -webkit-animation: load .01s;
           animation: load .01s;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   z-index: 10000;
@@ -138,7 +138,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .loading::before {
@@ -148,8 +148,8 @@ ul {
   height: 100%;
   z-index: 10001;
   overflow: hidden;
-  background: #0b0b0b;
-  opacity: 1;
+  background: #f9f9f9;
+  opacity: 0.8;
 }
 
 .loading::after {
