@@ -490,10 +490,12 @@ ul {
 .footer__link {
   margin-bottom: 10px;
   margin-left: 15px;
+  opacity: 0.9;
 }
 
 .footer__link--bold {
   color: #fff;
+  opacity: 1;
 }
 
 .footer a {

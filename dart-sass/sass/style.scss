@@ -330,8 +330,10 @@ ul
     &__link {
         margin-bottom: 10px;
         margin-left: 15px;
+        opacity: 0.9;
         &--bold {
             color: $white-color;
+            opacity: 1;
         }
     }
 
