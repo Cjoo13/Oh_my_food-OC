@@ -1,7 +1,9 @@
-/* REGLES GENERALES */
+/*Librairies des mixins et keyframes*/
 
 @import "libs/mixin.scss";
 @import "libs/keyframes.scss";
+
+/*Déclarations des variables*/
 
 $background-color: #f9f9f9;
 $primary-color: #9356DC;
@@ -10,6 +12,8 @@ $tertiary-color: #99E2D0;
 $black-color: rgb(0, 0, 0);
 $white-color: #fff;
 $button-color: linear-gradient($primary-color, $secondary-color);
+
+/*REGLES GENERALES*/
 
 body
 {
@@ -115,6 +119,47 @@ ul
             cursor: pointer;
         }        
     }
+}
+
+.footer
+{
+    background: lighten($black-color, 20);
+    @include flex-column;
+    &__title {
+        font-family: 'Shrikhand';
+        color: $white-color;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    &__link {
+        margin-bottom: 10px;
+        margin-left: 15px;
+        opacity: 0.9;
+        &--bold {
+            color: $white-color;
+            opacity: 1;
+        }
+    }
+
+    a {
+        color: darken($white-color, 10)
+    }
+
+    i {
+        padding-right: 10px;
+    }
+
+    .fa-hands-helping {
+        font-size: 0.7rem;
+    }
+
+    @media (min-width: 600px) {
+        align-items: center;
+    }
+
+
+
 }
 
 /* PAGE D'ACCUEIL */
@@ -314,47 +359,6 @@ ul
             width: 600px;
         }
     }
-}
-
-.footer
-{
-    background: lighten($black-color, 20);
-    @include flex-column;
-    &__title {
-        font-family: 'Shrikhand';
-        color: $white-color;
-        margin-bottom: 15px;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-    &__link {
-        margin-bottom: 10px;
-        margin-left: 15px;
-        opacity: 0.9;
-        &--bold {
-            color: $white-color;
-            opacity: 1;
-        }
-    }
-
-    a {
-        color: darken($white-color, 10)
-    }
-
-    i {
-        padding-right: 10px;
-    }
-
-    .fa-hands-helping {
-        font-size: 0.7rem;
-    }
-
-    @media (min-width: 600px) {
-        align-items: center;
-    }
-
-
-
 }
 
 /* PARTIE MENU */
