@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*Librairies des mixins et keyframes*/
 @-webkit-keyframes apparition {
   0% {
@@ -87,7 +86,6 @@
   }
 }
 
-/*Déclarations des variables*/
 /*REGLES GENERALES*/
 body {
   font-family: 'Roboto', sans-serif;
