@@ -3,6 +3,8 @@
 @import "libs/mixin.scss";
 @import "libs/keyframes.scss";
 
+/*Variables*/
+
 $background-color: #f9f9f9;
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
@@ -60,9 +62,8 @@ ul
     animation-delay: 2s;
     animation-fill-mode: both;
     z-index: 10000;
-    display: flex;
+    @include flex-center;
     align-items: center;
-    justify-content: center;
     opacity: 0.8;
     &::before {
         content: "";
@@ -97,12 +98,6 @@ ul
     margin-right: 20px;
     position: relative;
     font-size: 1.4rem;
-    &::before {
-        content: "";
-        font-weight: bold;
-        transition: color 1s ease-out;
-        }
-
     .fas {
         position: absolute;
         top: 3px;

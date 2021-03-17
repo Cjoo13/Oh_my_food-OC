@@ -87,6 +87,7 @@
   }
 }
 
+/*Variables*/
 /*REGLES GENERALES*/
 body {
   font-family: 'Roboto', sans-serif;
@@ -134,12 +135,12 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0.8;
 }
 
@@ -177,13 +178,6 @@ ul {
   margin-right: 20px;
   position: relative;
   font-size: 1.4rem;
-}
-
-.heart::before {
-  content: "";
-  font-weight: bold;
-  -webkit-transition: color 1s ease-out;
-  transition: color 1s ease-out;
 }
 
 .heart .fas {
