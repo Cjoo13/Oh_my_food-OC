@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Librairies des mixins et keyframes*/
 @-webkit-keyframes apparition {
   0% {
@@ -202,6 +203,7 @@ ul {
   cursor: pointer;
 }
 
+/* Footer, identique sur la page d'accueil et la page menu */
 .footer {
   background: #333333;
   display: -webkit-box;
@@ -253,6 +255,7 @@ ul {
 }
 
 /* PAGE D'ACCUEIL */
+/* Header */
 .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -332,6 +335,7 @@ ul {
           box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* 1ère Section */
 .fonc__heading {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -417,6 +421,7 @@ ul {
   opacity: 1;
 }
 
+/* 2ème section */
 .restau {
   background: #f9f9f9;
 }
@@ -520,6 +525,7 @@ ul {
 }
 
 /* PARTIE MENU */
+/* Header */
 .fleche-logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -565,6 +571,7 @@ ul {
      object-fit: cover;
 }
 
+/* Section contenant les 3 div : Entrées, Plats, Desserts */
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
