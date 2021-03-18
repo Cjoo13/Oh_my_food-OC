@@ -61,14 +61,13 @@ ul
     animation: load .01s;
     animation-delay: 2s;
     animation-fill-mode: both;
-    z-index: 10000;
+    z-index: 10001;
     @include flex-center;
     align-items: center;
     opacity: 0.8;
     &::before {
         content: "";
         position: absolute;
-        z-index: 10001;
         overflow: hidden;
     }
     &::after {
